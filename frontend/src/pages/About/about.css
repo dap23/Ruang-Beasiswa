@@ -1,0 +1,175 @@
+.img-top-left{
+    height: 5vh;
+    width: 60vh;
+    padding-left: 10vh;
+    margin-top: 5vh;
+}
+
+.size-logo{
+    height: 7vh;
+}
+
+.img-middle-left {
+    height: 120vh;
+    width: 90vh;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+}
+
+.about h1{
+    text-align: center;
+    font-size: 6vh;
+}
+
+.wrapper-top-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.top-right-button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: right;
+    position:absolute;
+    top: 40px;
+    right: 170px;
+}
+
+.button-SignIn {
+    border: 1px solid #1F4690;
+    border-radius: 8px;
+    padding: 8px;
+    color: #1f4690;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button-SignOut {
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    color: white;
+    background-color: #1f4690;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button-SignUp {
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    color: white;
+    background-color: #1f4690;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.wrapper-up {
+    display: flex;
+    flex-direction: row;
+    gap: 90px;
+}
+
+.img-big-logo{
+    height: 10vh;
+    width: 60vh;
+    margin: 10vh 10vh 7vh 15vh;
+}
+
+.deskripsi{
+    font-size: 30px;
+    font-weight: 450;
+    text-align: justify;
+    margin: 0 50px 0 0;
+    line-height: 45px;
+}
+
+.wrapper-bottom-content{
+    display: flex;
+    flex-direction: row;
+    margin: 10vh;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.wrapper-bottom-content-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.wrapper-bottom-content-name p{
+    font-size: 15px;
+    margin: 0;
+}
+
+.sponsor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    width: 100%;
+}
+
+#logo-sponsor {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+#logo-sponsor img {
+    object-fit: contain;
+}
+
+.img-logo-lpdp {
+    height: 6em;
+    width: 10em;
+}
+
+.img-logo-djarum {
+    height: 6em;
+    width: 12em;
+}
+
+.img-logo-rg {
+    height: 6em;
+    width: 7em;
+}
+
+.decor-bawah {
+    width: 100%;
+    height: 35vh;
+    position: relative;
+}
+
+.decor-bawah .img-decor-left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.decor-bawah .img-decor-right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

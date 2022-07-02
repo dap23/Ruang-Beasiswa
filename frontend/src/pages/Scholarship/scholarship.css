@@ -1,0 +1,60 @@
+:root {
+    --primary-color: #1F4690;
+}
+
+.scholarship {
+    display: flex;
+}
+
+.scholarship .content {
+    flex: 4;
+    overflow: scroll;
+    height: 100vh;
+}
+
+.scholarship .content .navbar {
+    border-bottom: 1px solid;
+}
+
+.scholarship .content .body {
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.scholarship .content .body .button {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.scholarship .content .body .add {
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+}
+
+.form .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.form .input-group input {
+    width: 600px;
+    height: 30px;
+}
+
+.form .input-group textarea {
+    width: 600px;
+    height: 100px;
+}

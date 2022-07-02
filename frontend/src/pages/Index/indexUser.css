@@ -1,0 +1,147 @@
+.wrapper-index-user {
+    display: flex;
+    flex-direction: row;
+}
+.wrapper-menu-index-user {
+    display: flex;
+    flex-direction: column;
+    background-color: #1F4690;
+    color: white;
+    height: max-content;
+    gap: 55px;
+    padding: 20px;
+}
+
+.logo-putih {
+    width: 200px;
+}
+
+.menu-user {
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+    padding-right: 20px;
+    align-items: justify;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.menu-user-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    font-weight: bold;
+}
+
+.icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.akun-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+    gap: 30px;
+}
+
+.active {
+    border-left: 3px solid;
+}
+
+.img-user {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.profil {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -15px;
+}
+
+.user {
+    color: rgba(255, 255, 255, 60%);
+    margin-top: -20px;
+}
+
+.button {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button-logout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 3px;
+    border: 0px;
+    border-radius: 10px;
+    width: 260px;
+    height: 40px;
+    background: #B9344C;
+    color: white;
+    cursor: pointer;
+}
+
+.button-logout:hover {
+    background: #bc1d3a;
+}
+
+.konten {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 150px;
+    border: 1px solid #b3b3b3;
+    border-radius: 10px;
+    padding-left: 38px;
+    padding-right: 38px;
+}
+
+.header-user p {
+    color: #b3b3b3;
+    margin-top: -20px;
+}
+
+.search-and-button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.search {
+    border: 0px;
+    border-radius: 5px;
+    background-color: #eeeeee;
+    padding: 8px;
+}
+
+.button-filter {
+    border: 0px;
+    border-radius: 5px;
+    background-color: #eeeeee;
+    color: #7f7f7f;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* .konten-grafik {
+    background-color: #b3b3b3;
+} */

@@ -1,0 +1,35 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #F2F2F2;
+
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action button {
+    background-color: transparent;
+    border: none;
+    font-size: 23px;
+    cursor: pointer;
+    color: tomato;
+}
+
+.action button:nth-child(2) {
+    color: teal;
+}

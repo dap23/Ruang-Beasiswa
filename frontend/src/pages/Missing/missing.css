@@ -1,0 +1,33 @@
+.missing {
+    width: 100%;
+}
+
+.missing .text-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.missing .text-top h1 {
+    font-size: 80px;
+    margin: 0;
+}
+
+.missing .text-top h3 {
+    font-size: 30px;
+}
+
+.missing .text-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.missing .text-bottom .link {
+    background-color: black;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 10px;
+}

@@ -1,0 +1,78 @@
+.hero {
+    display: flex;
+}
+
+.hero .left,
+.hero .right {
+    flex: 1;
+}
+
+.hero .left img {
+    width: 100%;
+    height: 100%;
+}
+
+.hero .right {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    padding-top: 90px;
+    gap: 20px;
+}
+
+.hero .right .top {
+    display: block;
+    padding: 0;
+}
+
+.hero .right .top h1 {
+    font-size: 50px;
+    color: #1f4690;
+    margin: 0;
+}
+
+.hero .right .top span {
+    margin: 0;
+    color: #1f4690;
+    display: block;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.hero .right .search-hero {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.hero .right .search-hero input {
+    width: 400px;
+    height: 35px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    background: #E4E3E3;
+}
+
+.hero .right .search-hero button {
+    background: #1f4690;
+    height: 35px;
+    width: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.hero .right .bottom {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
