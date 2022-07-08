@@ -49,6 +49,7 @@ const Footer = () => {
           <h5>Partner</h5>
           <div className="keterangan">
             <p>Be Our Partner</p>
+            <p>Join Our Telegram</p>
           </div>
         </div>
       </div>
