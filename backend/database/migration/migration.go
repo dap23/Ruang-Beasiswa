@@ -44,7 +44,8 @@ func CreateTableDatabse(db *sql.DB) (string, error) {
 		Description TEXT NOT NULL,
 		Kategori VARCHAR NOT NULL,
 		Image VARCHAR NOT NULL,
-		Created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+		Created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+		Link VARCHAR NOT NULL
 		);
 	
 	CREATE TABLE IF NOT EXISTS comments (

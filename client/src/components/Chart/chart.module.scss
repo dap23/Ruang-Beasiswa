@@ -1,0 +1,21 @@
+.container {
+  flex: 4;
+  height: 400px;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    border-left: 8px solid #000;
+    padding-left: 10px;
+  }
+
+  .chart {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

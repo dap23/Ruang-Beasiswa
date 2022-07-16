@@ -31,4 +31,5 @@ type Scholarship struct {
 	Kategori    string `json:"kategori"`
 	Image       string `json:"image"`
 	CreatedAt   string `json:"created_at"`
+	Link 		string `json:"link"`
 }

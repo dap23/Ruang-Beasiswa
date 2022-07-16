@@ -30,7 +30,7 @@ func (a *API) uploadScholarships(c *gin.Context) {
 		return
 	}
 
-	if beasiswa.Name == "" || beasiswa.Jenjang == "" || beasiswa.Kota == "" || beasiswa.Description == "" || beasiswa.Image == "" {
+	if beasiswa.Name == "" || beasiswa.Jenjang == "" || beasiswa.Kota == "" || beasiswa.Description == "" || beasiswa.Image == "" || beasiswa.Link == "" {
 		c.JSON(http.StatusUnauthorized, gin.H{
 			"code":    http.StatusUnauthorized,
 			"message": "tidak boleh kosong",

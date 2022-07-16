@@ -13,9 +13,9 @@ func NewScholarshipsRepository(db *sql.DB) *ScholarshipsRepository {
 }
 
 func (s *ScholarshipsRepository) Upload(beasiswa Scholarship) (Scholarship, error) {
-	sqlStatement := `INSERT INTO scholarship (name, jenjang, kota, description, kategori, image) VALUES (?, ?, ?, ?, ?, ?);`
+	sqlStatement := `INSERT INTO scholarship (name, jenjang, kota, description, kategori, image, link) VALUES (?, ?, ?, ?, ?, ?, ?);`
 
-	_, err := s.db.Exec(sqlStatement, beasiswa.Name, beasiswa.Jenjang, beasiswa.Kota, beasiswa.Description, beasiswa.Kategori, beasiswa.Image)
+	_, err := s.db.Exec(sqlStatement, beasiswa.Name, beasiswa.Jenjang, beasiswa.Kota, beasiswa.Description, beasiswa.Kategori, beasiswa.Image,  beasiswa.Link)
 	if err != nil {
 		return Scholarship{}, err
 
@@ -33,7 +33,7 @@ func (s *ScholarshipsRepository) GetAll() ([]Scholarship, error) {
 	var scholarships []Scholarship
 	for rows.Next() {
 		var scholarship Scholarship
-		err = rows.Scan(&scholarship.Id, &scholarship.Name, &scholarship.Jenjang, &scholarship.Kota, &scholarship.Description, &scholarship.Kategori, &scholarship.Image, &scholarship.CreatedAt)
+		err = rows.Scan(&scholarship.Id, &scholarship.Name, &scholarship.Jenjang, &scholarship.Kota, &scholarship.Description, &scholarship.Kategori, &scholarship.Image, &scholarship.CreatedAt, &scholarship.Link)
 		if err != nil {
 			return nil, err
 		}
@@ -47,7 +47,7 @@ func (s *ScholarshipsRepository) GetById(id int) (Scholarship, error) {
 
 	row := s.db.QueryRow(sqlStatement, id)
 	var scholarship Scholarship
-	err := row.Scan(&scholarship.Id, &scholarship.Name, &scholarship.Jenjang, &scholarship.Kota, &scholarship.Description, &scholarship.Kategori, &scholarship.Image, &scholarship.CreatedAt)
+	err := row.Scan(&scholarship.Id, &scholarship.Name, &scholarship.Jenjang, &scholarship.Kota, &scholarship.Description, &scholarship.Kategori, &scholarship.Image, &scholarship.CreatedAt, &scholarship.Link)
 	if err != nil {
 		return scholarship, err
 	}
@@ -64,7 +64,7 @@ func (s *ScholarshipsRepository) GetByJenjang(jenjang string) ([]Scholarship, er
 	var scholarships []Scholarship
 	for rows.Next() {
 		var scholarship Scholarship
-		err = rows.Scan(&scholarship.Id, &scholarship.Name, &scholarship.Jenjang, &scholarship.Kota, &scholarship.Description, &scholarship.Kategori, &scholarship.Image, &scholarship.CreatedAt)
+		err = rows.Scan(&scholarship.Id, &scholarship.Name, &scholarship.Jenjang, &scholarship.Kota, &scholarship.Description, &scholarship.Kategori, &scholarship.Image, &scholarship.CreatedAt, &scholarship.Link)
 		if err != nil {
 			return nil, err
 		}
@@ -83,7 +83,7 @@ func (s *ScholarshipsRepository) GetByKota(kota string) ([]Scholarship, error) {
 	var scholarships []Scholarship
 	for rows.Next() {
 		var scholarship Scholarship
-		err = rows.Scan(&scholarship.Id, &scholarship.Name, &scholarship.Jenjang, &scholarship.Kota, &scholarship.Description, &scholarship.Kategori, &scholarship.Image, &scholarship.CreatedAt)
+		err = rows.Scan(&scholarship.Id, &scholarship.Name, &scholarship.Jenjang, &scholarship.Kota, &scholarship.Description, &scholarship.Kategori, &scholarship.Image, &scholarship.CreatedAt, &scholarship.Link)
 		if err != nil {
 			return nil, err
 		}
@@ -102,7 +102,7 @@ func (s *ScholarshipsRepository) GetByName(name string) ([]Scholarship, error) {
 	var scholarships []Scholarship
 	for rows.Next() {
 		var scholarship Scholarship
-		err = rows.Scan(&scholarship.Id, &scholarship.Name, &scholarship.Jenjang, &scholarship.Kota, &scholarship.Description, &scholarship.Kategori, &scholarship.Image, &scholarship.CreatedAt)
+		err = rows.Scan(&scholarship.Id, &scholarship.Name, &scholarship.Jenjang, &scholarship.Kota, &scholarship.Description, &scholarship.Kategori, &scholarship.Image, &scholarship.CreatedAt, &scholarship.Link)
 		if err != nil {
 			return nil, err
 		}
@@ -121,7 +121,7 @@ func (s *ScholarshipsRepository) GetByKategori(kategori string) ([]Scholarship, 
 	var scholarships []Scholarship
 	for rows.Next() {
 		var scholarship Scholarship
-		err = rows.Scan(&scholarship.Id, &scholarship.Name, &scholarship.Jenjang, &scholarship.Kota, &scholarship.Description, &scholarship.Kategori, &scholarship.Image, &scholarship.CreatedAt)
+		err = rows.Scan(&scholarship.Id, &scholarship.Name, &scholarship.Jenjang, &scholarship.Kota, &scholarship.Description, &scholarship.Kategori, &scholarship.Image, &scholarship.CreatedAt, &scholarship.Link)
 		if err != nil {
 			return nil, err
 		}
@@ -145,9 +145,9 @@ func (s *ScholarshipsRepository) Delete(id int) (Scholarship, error) {
 }
 
 func (s *ScholarshipsRepository) Update(id int, beasiswa Scholarship) (Scholarship, error) {
-	sqlStatement := `UPDATE scholarship SET name = ?, description = ?, jenjang = ?, kota = ?, kategori = ?, image = ? WHERE id = ?;`
+	sqlStatement := `UPDATE scholarship SET name = ?, description = ?, jenjang = ?, kota = ?, kategori = ?, image = ?, link = ?, WHERE id = ?;`
 
-	_, err := s.db.Exec(sqlStatement, beasiswa.Name, beasiswa.Description, beasiswa.Jenjang, beasiswa.Kota, beasiswa.Kategori, beasiswa.Image, id)
+	_, err := s.db.Exec(sqlStatement, beasiswa.Name, beasiswa.Description, beasiswa.Jenjang, beasiswa.Kota, beasiswa.Kategori, beasiswa.Image, beasiswa.Link, id)
 	if err != nil {
 		return Scholarship{}, err
 	}

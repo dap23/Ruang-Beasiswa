@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  .content {
+    flex: 4;
+    overflow: scroll;
+  }
+}

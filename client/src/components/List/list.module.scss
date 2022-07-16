@@ -1,0 +1,23 @@
+.container {
+  .title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  ul,
+  li {
+    list-style: none;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .link {
+      text-decoration: none;
+      color: var(--main-color);
+      font-size: 18px;
+    }
+  }
+}
