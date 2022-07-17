@@ -24,27 +24,34 @@ const User = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
-              <tr key={user?.id}>
-                <td>{user?.id}</td>
-                <td>
-                  <img src={user?.image} alt="" />
-                </td>
-                <td>{user?.username}</td>
-                <td>{format(user?.created_at, "id-ID")}</td>
-                <td>{user?.kota}</td>
-                <td>{user?.jenjang}</td>
-                <td>
-                  <div className={styles.button}>
-                    <AiFillEdit className={styles.edit} />
-                    <AiFillDelete
-                      className={styles.delete}
-                      onClick={() => deleteUser(user?.id)}
-                    />
-                  </div>
-                </td>
-              </tr>
-            ))}
+            {users
+              .filter((user) => {
+                if (user.role === "user") {
+                  return user;
+                }
+                return null;
+              })
+              .map((user) => (
+                <tr key={user?.id}>
+                  <td>{user?.id}</td>
+                  <td>
+                    <img src={user?.image} alt="" />
+                  </td>
+                  <td>{user?.username}</td>
+                  <td>{format(user?.created_at, "id-ID")}</td>
+                  <td>{user?.kota}</td>
+                  <td>{user?.jenjang}</td>
+                  <td>
+                    <div className={styles.button}>
+                      <AiFillEdit className={styles.edit} />
+                      <AiFillDelete
+                        className={styles.delete}
+                        onClick={() => deleteUser(user?.id)}
+                      />
+                    </div>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
