@@ -19,7 +19,7 @@ func (s *UserRepository) Register(user User) (User, error) {
 	password, _ := bcrypt.GenerateFromPassword([]byte(user.Password), 10)
 	sqlStatement := `INSERT INTO user (username, password, email, jenjang, kota, image, role) VALUES (?, ?, ?, ?, ?, ?, ?);`
 
-	_, err := s.db.Exec(sqlStatement, user.Username, string(password), user.Email, user.Jenjang, user.Kota, "https://res.cloudinary.com/wikitro/image/upload/v1656228746/ruang-beasiswa/download_iztpk3.png", "admin")
+	_, err := s.db.Exec(sqlStatement, user.Username, string(password), user.Email, user.Jenjang, user.Kota, "https://res.cloudinary.com/wikitro/image/upload/v1656228746/ruang-beasiswa/download_iztpk3.png", "user")
 	if err != nil {
 		return User{}, err
 
