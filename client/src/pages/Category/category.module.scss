@@ -42,6 +42,13 @@
           margin-bottom: 30px;
         }
 
+        p {
+          width: 800px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
         .wrapper {
           display: flex;
           flex-direction: column;

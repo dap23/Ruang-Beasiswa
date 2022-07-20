@@ -25,30 +25,32 @@ const Category = () => {
             }
             return null;
           })
-          .map((beasiswa, i) => (
-            <div className={styles.box} key={i}>
-              <img src={beasiswa?.image} alt={beasiswa?.name} />
-              <div className={styles.info}>
-                <h1>{beasiswa?.name}</h1>
-                <p>{beasiswa?.description}</p>
-                <div className={styles.wrapper}>
-                  <h3>
-                    <GoLocation /> {beasiswa?.kota}
-                  </h3>
-                  <h3>
-                    <MdSchool /> {beasiswa?.jenjang}
-                  </h3>
-                </div>
-                <div className={styles.button}>
-                  <Link
-                    to={`/scholarship/${beasiswa?.id}`}
-                    style={{ color: "inherit", textDecoration: "none" }}>
-                    <button>Daftar</button>
-                  </Link>
+          .map((beasiswa, i) => {
+            return (
+              <div className={styles.box} key={i}>
+                <img src={beasiswa?.image} alt={beasiswa?.name} />
+                <div className={styles.info}>
+                  <h1>{beasiswa?.name}</h1>
+                  <p>{beasiswa?.description}</p>
+                  <div className={styles.wrapper}>
+                    <h3>
+                      <GoLocation /> {beasiswa?.kota}
+                    </h3>
+                    <h3>
+                      <MdSchool /> {beasiswa?.jenjang}
+                    </h3>
+                  </div>
+                  <div className={styles.button}>
+                    <Link
+                      to={`/scholarship/${beasiswa?.id}`}
+                      style={{ color: "inherit", textDecoration: "none" }}>
+                      <button>Daftar</button>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
       </div>
     </div>
   );
