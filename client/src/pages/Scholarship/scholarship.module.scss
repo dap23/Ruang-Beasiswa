@@ -5,6 +5,19 @@
   height: 400px;
   background: #fff;
 
+  .msg {
+    background-color: var(--main-color);
+    width: 500px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
   .top {
     display: flex;
     align-items: center;

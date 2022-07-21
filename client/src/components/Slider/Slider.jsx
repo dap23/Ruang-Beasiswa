@@ -17,9 +17,7 @@ const Slider = () => {
         </Link>
       </div>
       <div className={styles.wrapper}>
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={beasiswas ? beasiswas.length : 4}>
+        <Swiper spaceBetween={50} slidesPerView={4}>
           {beasiswas?.map((data, i) => (
             <SwiperSlide key={i}>
               <Link to={`/scholarship/${data?.id}`} className={styles.link}>

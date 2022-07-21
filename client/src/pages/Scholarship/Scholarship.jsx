@@ -5,11 +5,11 @@ import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import useStore from "../../store/store";
 import { useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const Scholarship = () => {
-  const navigate = useNavigate();
   const [modal, setModal] = useState(false);
+  const [msg, setMsg] = useState(null);
+  const [showDel, setShowDel] = useState(false);
   const [data, setData] = useState({
     name: "",
     image: "",
@@ -37,6 +37,19 @@ const Scholarship = () => {
     });
   };
 
+  const handleDelete = (id) => {
+    removeBeasiswa(id);
+    setShowDel(true);
+  };
+
+  useEffect(() => {
+    if (showDel) {
+      setTimeout(function () {
+        setShowDel(false);
+      }, 3000);
+    }
+  }, [showDel]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const beasiswa = {
@@ -49,16 +62,15 @@ const Scholarship = () => {
       kategori: data?.kategori,
     };
     try {
-      const res = await axios({
+      await axios({
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         url: "/scholarships/upload",
         data: beasiswa,
         withCredentials: true,
       });
-      if (res.status === 200) {
-        navigate("/dashboard/scholarship");
-      }
+      setMsg("Scholarship success uploaded!");
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
@@ -66,6 +78,20 @@ const Scholarship = () => {
 
   return (
     <div className={styles.container}>
+      {msg ? (
+        <div className={styles.msg}>
+          <h3>{msg}</h3>
+        </div>
+      ) : (
+        ""
+      )}
+      {showDel ? (
+        <div className={styles.msg}>
+          <h3>Scholarship has been deleted!</h3>
+        </div>
+      ) : (
+        ""
+      )}
       <div className={styles.top}>
         <h3>{modal ? "Add Beasiswa" : "Beasiswa"}</h3>
         {modal ? (
@@ -179,7 +205,7 @@ const Scholarship = () => {
                           <AiFillEdit className={styles.edit} />
                           <AiFillDelete
                             className={styles.delete}
-                            onClick={() => removeBeasiswa(beasiswa?.id)}
+                            onClick={() => handleDelete(beasiswa?.id)}
                           />
                         </div>
                       </td>
