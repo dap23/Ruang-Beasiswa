@@ -29,7 +29,10 @@ function App() {
         <Route path="scholarship" element={<Scholarships />} />
         <Route path="scholarship/:id" element={<Single />} />
         <Route path="scholarship/cat/:cat" element={<Category />} />
-        <Route path="profile/:userId" element={<Profile />} />
+        <Route
+          path="profile/:userId"
+          element={currentUser?.data ? <Profile /> : <Navigate to="/" />}
+        />
       </Route>
 
       <Route

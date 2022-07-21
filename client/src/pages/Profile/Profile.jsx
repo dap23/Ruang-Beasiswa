@@ -18,6 +18,8 @@ const Profile = () => {
     image: data?.image,
   });
 
+  const logout = useStore((state) => state.logout);
+
   const handleChange = (e) => {
     const value = e.target.value;
     setUser({
@@ -69,7 +71,7 @@ const Profile = () => {
             ) : (
               ""
             )}
-            <li>Sign Out</li>
+            <li onClick={() => logout()}>Sign Out</li>
           </ul>
         </div>
       </div>
